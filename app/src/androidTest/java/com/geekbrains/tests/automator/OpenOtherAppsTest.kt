@@ -7,6 +7,7 @@ import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiScrollable
 import androidx.test.uiautomator.UiSelector
+import com.geekbrains.tests.uiDevice
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -14,8 +15,6 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 @SdkSuppress(minSdkVersion = 18)
 class OpenOtherAppsTest {
-
-    private val uiDevice: UiDevice = UiDevice.getInstance(getInstrumentation())
 
     @Test
     fun test_OpenSettings() {
