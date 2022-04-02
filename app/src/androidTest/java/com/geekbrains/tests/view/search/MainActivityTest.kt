@@ -28,6 +28,7 @@ class MainActivityTest {
 
     @Test
     fun mainActivityTest() {
+        // Поиск кнопки "TO DETAILS" и нажатие на неё
         val materialButton = onView(
             allOf(
                 withId(R.id.toDetailsActivityButton), withText("to details"),
@@ -43,6 +44,7 @@ class MainActivityTest {
         )
         materialButton.perform(click())
 
+        // Поиск кнопки "+" и нажатие на неё
         val materialButton2 = onView(
             allOf(
                 withId(R.id.incrementButton), withText("+"),
@@ -58,6 +60,7 @@ class MainActivityTest {
         )
         materialButton2.perform(click())
 
+        // Поиск TextView счетчика и проверка увеличения значения
         val textView = onView(
             allOf(
                 withId(R.id.totalCountTextView), withText("Number of results: 1"),
@@ -67,6 +70,7 @@ class MainActivityTest {
         )
         textView.check(matches(withText("Number of results: 1")))
 
+        // Поиск кнопки "+" и проверка её видимости
         val button = onView(
             allOf(
                 withId(R.id.incrementButton), withText("+"),
@@ -77,6 +81,7 @@ class MainActivityTest {
         button.check(matches(isDisplayed()))
     }
 
+    // Вспомогательная функция для создания кастомного Матчера и поиска по определенным критериям
     private fun childAtPosition(
         parentMatcher: Matcher<View>, position: Int
     ): Matcher<View> {
